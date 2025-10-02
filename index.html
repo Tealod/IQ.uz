@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>IQ Quiz — Define Your IQ Level</title>
+  <link rel="icon" type="image/x-icon" href="images/my-logo.ico">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="site-wrap">
+
+    <!-- LANDING / HERO -->
+    <section id="landing" class="hero">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <h1>Define your IQ level</h1>
+          <p class="lead">Compare yourself with famous geniuses and world averages. Take the 10-question IQ-style visual test.</p>
+
+          <!-- Famous people cards -->
+          <div class="cards">
+            <article class="card">
+              <img src="images/einstein.jpg" alt="Einstein" />
+              <h3>Albert Einstein</h3>
+              <p class="meta">IQ ~ 160</p>
+            </article>
+
+            <article class="card">
+              <img src="images/newton.jpg" alt="Isaac Newton" />
+              <h3>Isaac Newton</h3>
+              <p class="meta">IQ ~ 150</p>
+            </article>
+
+            <article class="card">
+              <img src="images/tesla.jpg" alt="Nikola Tesla" />
+              <h3>Nikola Tesla</h3>
+              <p class="meta">IQ ~ 170</p>
+            </article>
+
+            <article class="card">
+              <img src="images/yoqubjon.jpg" alt="Yoqubjon" />
+              <h3>Yokubjon Isaqjonov<h3>
+              <p class="meta">IQ ~ 130</p>
+            </article>
+
+
+            <article class="card">
+              <img src="images/durov.jpg" alt="Pavel Durov" />
+              <h3>Pavel Durov</h3>
+              <p class="meta">IQ ~ 135</p>
+            </article>
+          </div>
+
+          <!-- Chart -->
+          <div class="chart-wrap">
+            <h2>Average IQ by Country</h2>
+            <canvas id="iqChart" height="140"></canvas>
+            <p class="chart-note">Data shown for illustration (use real sources for production).</p>
+          </div>
+
+          <div class="actions">
+            <button id="startBtn" class="btn primary">Start Test</button>
+            <button id="learnMoreBtn" class="btn ghost">Learn More</button>
+          </div>
+        </div>
+    </section>
+
+    <!-- QUIZ SECTION (hidden initially) -->
+    <section id="quizSection" class="quiz-screen hidden">
+      <div class="quiz-topbar">
+        <button id="backBtn" class="btn small">← Back</button>
+        <div class="quiz-title">IQ Visual Test</div>
+        <div class="quiz-controls">
+          <button id="exitBtn" class="btn small ghost">Exit</button>
+        </div>
+      </div>
+
+      <div class="quiz-wrap">
+        <!-- left: question area (white panel) -->
+        <div class="quiz-panel">
+          <div class="progress">
+            <div id="progressFill" class="progress-fill" style="width:0%"></div>
+          </div>
+
+          <div class="question-card">
+            <div class="q-index" id="qIndex">Question 1 / 10</div>
+            <img id="qImg" class="q-img" src="images/q1.png" alt="question image" />
+          </div>
+
+          <div id="optionsGrid" class="options-grid">
+            <!-- option items created by JS: 5 image buttons -->
+          </div>
+
+<div class="quiz-actions">
+  <button id="backQuestionBtn" class="btn ghost">⬅️ Back</button>
+  <button id="skipBtn" class="btn warning">⏭️ Skip</button>
+  <button id="nextBtn" class="btn primary disabled" disabled>Next ➡️</button>
+  <button id="quitBtn" class="btn danger">❌ Quit</button>
+</div>
+
+
+        <!-- right: sidebar with mini-info -->
+        <aside class="quiz-sidebar">
+          <div class="score-box">
+            <h4>Score</h4>
+            <div id="scoreValue" class="score-value">0</div>
+            <p class="muted">Correct answers</p>
+          </div>
+
+          <div class="info-box">
+            <h4>How it works</h4>
+            <ul>
+              <li>10 image-based questions</li>
+              <li>Each correct = 1 point</li>
+              <li>Results shown as approximate IQ</li>
+            </ul>
+          </div>
+
+          <div class="country-legend">
+            <h4>Example country IQ</h4>
+            <ul>
+              <li>Uzbekistan — 87</li>
+              <li>USA — 98</li>
+              <li>Russia — 97</li>
+              <li>China — 104</li>
+              <li>Japan — 106</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- RESULT SECTION -->
+    <section id="resultSection" class="result-screen hidden">
+      <div class="result-card">
+        <h2>Your Estimated IQ</h2>
+        <div id="resultIQ" class="result-iq">—</div>
+        <p id="resultText" class="muted"></p>
+        <div class="result-actions">
+          <button id="retryBtn" class="btn primary">Try Again</button>
+          <button id="homeBtn" class="btn ghost">Back to Home</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+<footer style="text-align:center; margin-top: 20px; font-size:14px; color:gray;">
+  © 2025 | Made by Isaqjonov Muhsinjon
+</footer>
+</html>
+
